@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @XmlRootElement
-public class Articles implements Serializable {
+public class Article implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,10 +29,10 @@ public class Articles implements Serializable {
     private String contenu;
     private Date publication;
 
-    public Articles() {
+    public Article() {
     }
 
-    public Articles(String titre, String contenu) {
+    public Article(String titre, String contenu) {
         this.titre = titre;
         this.contenu = contenu;
         java.util.Date d = new java.util.Date();
@@ -82,10 +82,10 @@ public class Articles implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Articles)) {
+        if (!(object instanceof Article)) {
             return false;
         }
-        Articles other = (Articles) object;
+        Article other = (Article) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
